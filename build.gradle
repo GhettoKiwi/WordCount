@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+dependencies {
+    testImplementation 'org.apache.groovy:groovy-all:4.0.10'
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.objenesis:objenesis:3.2'
+    testImplementation 'net.bytebuddy:byte-buddy:1.14.2'
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'org.example.Main'
+        )
+    }
+}
